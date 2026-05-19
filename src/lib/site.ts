@@ -2,17 +2,17 @@ export const siteConfig = {
   name: 'National Roofing Solutions',
   descriptor:
     'Roof repairs, restorations, replacements and maintenance across Sunbury and surrounding Victorian suburbs.',
-  phone: 'Add phone number',
+  phone: '0421 601 954',
   phoneHref: '#contact',
-  email: 'Add email address',
+  email: 'info@nationalroofing.com.au',
   location: 'Sunbury, Victoria',
   serviceArea:
     'Servicing Sunbury, the Macedon Ranges, Melbourne’s north-west and surrounding Victorian communities.',
-  facebookUrl: 'https://www.facebook.com/',
+  facebookUrl: 'https://www.facebook.com/profile.php?id=61577412972943',
   tagline: 'Roofing at its peak.',
   heroHeadline: [
     'Roof Repairs',
-    'Roof Restorations',
+    'Roof Restoration',
     'Metal Roofing',
     'Gutter Solutions',
   ],

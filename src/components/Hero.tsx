@@ -1,8 +1,9 @@
-import { ArrowRight, MapPin, ShieldCheck } from 'lucide-react'
-import logo from '../assets/logo.png'
+import { ArrowRight, MapPin } from 'lucide-react'
 import heroBg from '../assets/HeroBackground.mp4'
 import { serviceTickerItems, siteConfig } from '../lib/site'
 import TypeWriter from './animations/TypeWriter'
+
+const heroVideo = new URL('../assets/202605192007 (2).mov', import.meta.url).href
 
 export default function Hero() {
   const tickerItems = [...serviceTickerItems, ...serviceTickerItems]
@@ -12,7 +13,6 @@ export default function Hero() {
       id="top"
       className="roof-grid relative flex min-h-svh snap-start overflow-hidden pt-28 text-white"
     >
-      {/* Video background */}
       <video
         src={heroBg}
         autoPlay
@@ -22,22 +22,23 @@ export default function Hero() {
         preload="auto"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* Dark overlay so text stays readable */}
       <div className="absolute inset-0 bg-black/55" />
       <div className="absolute -right-32 top-24 h-96 w-96 rounded-full bg-(--color-accent)/25 blur-3xl" />
-      <div className="absolute -bottom-40 left-0 h-[28rem] w-[28rem] rounded-full bg-(--color-secondary)/35 blur-3xl" />
+      <div className="absolute -bottom-40 left-0 h-112 w-md rounded-full bg-(--color-secondary)/35 blur-3xl" />
 
-      <div className="section-shell relative grid flex-1 items-center gap-10 py-14 lg:grid-cols-[1.08fr_0.92fr]">
-        <div>
+      <div className="section-shell relative grid flex-1 items-center gap-10 py-14 lg:grid-cols-2">
+        <div className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white/80 backdrop-blur">
             <MapPin size={16} />
             Sunbury, Victoria
           </div>
 
-          <h1 className="max-w-4xl text-5xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
-            Roofing at its peak for{' '}
-            <span className="text-(--color-accent-light)">
-              <TypeWriter phrases={siteConfig.heroHeadline} />
+          <h1 className="text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl lg:text-6xl xl:text-7xl">
+            <span className="block">Roofing at its peak for</span>
+            <span className="block min-h-[0.95em] overflow-hidden text-(--color-accent-light)">
+              <span className="inline-block whitespace-nowrap">
+                <TypeWriter phrases={siteConfig.heroHeadline} />
+              </span>
             </span>
           </h1>
 
@@ -62,22 +63,17 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md">
-          <div className="absolute inset-8 rounded-full bg-(--color-accent)/40 blur-3xl" />
-          <div className="relative rounded-[2.2rem] border border-white/14 bg-black/32 p-5 shadow-2xl shadow-black/35 backdrop-blur">
-            <img
-              src={logo}
-              alt={siteConfig.name}
-              className="aspect-square w-full rounded-[1.7rem] object-cover logo-shadow"
-            />
-            <div className="mt-5 flex items-center gap-3 rounded-3xl border border-white/12 bg-white/10 p-4">
-              <ShieldCheck className="text-(--color-accent-light)" />
-              <p className="text-sm font-semibold leading-6 text-white/82">
-                Trade roofing solutions with a sharp finish, clear communication
-                and durable weather protection.
-              </p>
-            </div>
-          </div>
+        <div className="flex items-center justify-center">
+          <video
+            src={heroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label={siteConfig.name}
+            className="aspect-rectangle w-full max-w-[min(100%,50rem)] rounded-[1.7rem] border border-white/20 object-cover logo-shadow"
+          />
         </div>
 
         <div className="service-ticker col-span-full overflow-hidden border-y border-white/14 py-4">

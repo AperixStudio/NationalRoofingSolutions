@@ -1,10 +1,14 @@
 import logo from '../assets/logo.png'
 import { siteConfig } from '../lib/site'
+import { motion, useReducedMotion } from 'framer-motion'
+import aperixLogo from '../assets/aperix-logo.svg'
 
 export default function Footer() {
+  const prefersReduced = useReducedMotion()
+
   return (
     <footer className="snap-start bg-(--color-surface) px-4 py-10 text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-[2rem] border border-white/12 bg-white/[0.05] p-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-4xl border border-white/12 bg-white/5 p-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-4">
           <img
             src={logo}
@@ -21,6 +25,33 @@ export default function Footer() {
         <p className="text-sm font-semibold text-white/58">
           {siteConfig.location} • {siteConfig.serviceArea}
         </p>
+        <a
+          href="https://aperixstudio.com"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Built by Aperix"
+          className="flex w-fit flex-col items-center gap-1 self-end text-white/55 transition hover:text-white"
+        >
+          <motion.span
+            className="block"
+            animate={prefersReduced ? undefined : { rotate: 360 }}
+            transition={
+              prefersReduced
+                ? undefined
+                : { duration: 5, ease: 'linear', repeat: Infinity }
+            }
+          >
+            <img
+              src={aperixLogo}
+              alt=""
+              aria-hidden="true"
+              className="h-7 w-auto"
+            />
+          </motion.span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-white">
+            Built by Aperix
+          </span>
+        </a>
       </div>
     </footer>
   )

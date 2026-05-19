@@ -55,17 +55,13 @@ function App() {
 
   return (
     <>
+      <HomePage />
+      <Footer />
       <AnimatePresence>
         {introActive && (
           <IntroAnimation key="intro" onComplete={handleIntroComplete} />
         )}
       </AnimatePresence>
-      {!introActive && (
-        <>
-          <HomePage />
-          <Footer />
-        </>
-      )}
     </>
   )
 }

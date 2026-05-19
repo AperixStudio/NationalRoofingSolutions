@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin, ShieldCheck } from 'lucide-react'
 import logo from '../assets/logo.png'
+import heroBg from '../assets/HeroBackground.mp4'
 import { serviceTickerItems, siteConfig } from '../lib/site'
 import TypeWriter from './animations/TypeWriter'
 
@@ -9,9 +10,20 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="roof-grid relative flex min-h-svh snap-start overflow-hidden bg-(--color-surface) pt-28 text-white"
+      className="roof-grid relative flex min-h-svh snap-start overflow-hidden pt-28 text-white"
     >
-      <div className="absolute inset-0 bg-(image:--hero-overlay)" />
+      {/* Video background */}
+      <video
+        src={heroBg}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Dark overlay so text stays readable */}
+      <div className="absolute inset-0 bg-black/55" />
       <div className="absolute -right-32 top-24 h-96 w-96 rounded-full bg-(--color-accent)/25 blur-3xl" />
       <div className="absolute -bottom-40 left-0 h-[28rem] w-[28rem] rounded-full bg-(--color-secondary)/35 blur-3xl" />
 

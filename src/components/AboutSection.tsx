@@ -2,7 +2,7 @@ import GoogleMap from './GoogleMap'
 import { siteConfig } from '../lib/site'
 import RevealSection from './animations/RevealSection'
 
-const aboutImage = new URL('../assets/NRSImage1.webp', import.meta.url).href
+const aboutImage = new URL('../assets/NRSImage2.webp', import.meta.url).href
 
 export default function AboutSection() {
   return (

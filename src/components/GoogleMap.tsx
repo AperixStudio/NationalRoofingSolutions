@@ -39,16 +39,9 @@ type GoogleMapOverlayView = {
   onRemove: () => void
 }
 
-type MarkerOptions = {
-  position: LatLngLiteral
-  map: GoogleMapInstance
-  title: string
-}
-
 type GoogleMapsGlobal = {
   maps: {
     Map: new (element: HTMLElement, options: GoogleMapOptions) => GoogleMapInstance
-    Marker: new (options: MarkerOptions) => object
     LatLng: new (lat: number, lng: number) => GoogleLatLng
     OverlayView: new () => GoogleMapOverlayView
   }
@@ -227,11 +220,6 @@ export default function GoogleMap() {
           styles: darkMapStyles,
         })
 
-        new window.google.maps.Marker({
-          position: sunburyCoordinates,
-          map,
-          title: `${siteConfig.name} - ${siteConfig.location}`,
-        })
         sunburyPinOverlay = addSunburyPinOverlay(map)
       })
       .catch(() => setHasError(true))

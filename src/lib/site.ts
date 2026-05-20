@@ -12,22 +12,21 @@ export const siteConfig = {
   facebookUrl: 'https://www.facebook.com/profile.php?id=61577412972943',
   tagline: 'Roofing at its peak.',
   heroHeadline: [
-    'Roof Repairs',
-    'Roof Restoration',
+    'Repairs',
+    'Restoration',
     'Metal Roofing',
     'Gutter Solutions',
   ],
 }
 
 export const serviceTickerItems = [
-  'Roof repairs',
-  'Roof restorations',
-  'Roof replacements',
-  'Metal roofing',
-  'Gutter repairs',
-  'Leak detection',
-  'Storm damage',
-  'Roof maintenance',
+  'Repairs & Restorations',
+  'Roof Replacements',
+  'Metal Roofing',
+  'Gutter Repairs',
+  'Leak Detection',
+  'Storm Damage',
+  'Roof Maintenance',
 ]
 
 export const services = [

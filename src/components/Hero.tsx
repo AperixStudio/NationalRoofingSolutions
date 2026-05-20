@@ -6,12 +6,10 @@ import TypeWriter from './animations/TypeWriter'
 const heroVideo = new URL('../assets/202605192007 (2).mov', import.meta.url).href
 
 export default function Hero() {
-  const tickerItems = [...serviceTickerItems, ...serviceTickerItems]
-
   return (
     <section
       id="top"
-      className="roof-grid relative flex min-h-svh snap-start overflow-hidden pt-28 text-white"
+      className="roof-grid relative flex min-h-svh snap-start overflow-hidden pt-20 text-white sm:pt-28"
     >
       <video
         src={heroBg}
@@ -26,15 +24,16 @@ export default function Hero() {
       <div className="absolute -right-32 top-24 h-96 w-96 rounded-full bg-(--color-accent)/25 blur-3xl" />
       <div className="absolute -bottom-40 left-0 h-112 w-md rounded-full bg-(--color-secondary)/35 blur-3xl" />
 
-      <div className="section-shell relative grid flex-1 items-center gap-10 py-14 lg:grid-cols-2">
+      <div className="section-shell relative grid flex-1 items-start gap-8 py-8 sm:items-center sm:gap-10 sm:py-14 lg:grid-cols-2">
         <div className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white/80 backdrop-blur">
             <MapPin size={16} />
             Sunbury, Victoria
           </div>
 
-          <h1 className="text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl lg:text-6xl xl:text-7xl">
-            <span className="block">Roofing at its peak for</span>
+          <h1 className="text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl lg:text-5xl xl:text-6xl">
+            <span className="block whitespace-nowrap">ROOFING BUILT FOR</span>
+            <span className="block whitespace-nowrap">VICTORIAN CONDITIONS</span>
             <span className="block min-h-[0.95em] overflow-hidden text-(--color-accent-light)">
               <span className="inline-block whitespace-nowrap">
                 <TypeWriter phrases={siteConfig.heroHeadline} />
@@ -76,15 +75,23 @@ export default function Hero() {
           />
         </div>
 
-        <div className="service-ticker col-span-full overflow-hidden border-y border-white/14 py-4">
-          <div className="service-ticker__track flex w-max gap-3">
-            {tickerItems.map((item, index) => (
-              <span
-                key={`${item}-${index}`}
-                className="rounded-full border border-white/14 bg-white/8 px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-white/76"
+        <div className="service-ticker col-span-full mx-auto w-3/4 overflow-hidden border-y border-white/14 py-4">
+          <div className="service-ticker__track flex w-max">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                aria-hidden={copy === 1}
+                className="flex shrink-0 gap-3 pr-3"
               >
-                {item}
-              </span>
+                {serviceTickerItems.map((item) => (
+                  <span
+                    key={`${copy}-${item}`}
+                    className="rounded-full border border-white/14 bg-white/8 px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-white/76"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             ))}
           </div>
         </div>

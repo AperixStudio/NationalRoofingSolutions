@@ -14,7 +14,7 @@ export default function ServicesOverview() {
             Roofing Services
           </p>
           <h2 className="mt-4 text-5xl font-black uppercase leading-[0.92] tracking-[-0.05em] sm:text-7xl">
-            Built for clean lines, tight seals and long-term protection.
+            DESIGNED FOR PERFORMANCE AND LONG-TERM PROTECTION
           </h2>
         </RevealSection>
 
@@ -38,7 +38,7 @@ export default function ServicesOverview() {
         </div>
 
         <RevealSection delay={0.12}>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-3 justify-center">
             {serviceTags.map((tag) => (
               <span
                 key={tag}

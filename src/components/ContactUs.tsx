@@ -1,14 +1,8 @@
-import type { FormEvent } from 'react'
 import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { siteConfig } from '../lib/site'
 import RevealSection from './animations/RevealSection'
 
 export default function ContactUs() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    window.alert('Thanks for your enquiry. Add the business email or form provider to connect this form.')
-  }
-
   return (
     <section
       id="contact"
@@ -16,8 +10,8 @@ export default function ContactUs() {
     >
       <div className="section-shell grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-center">
         <RevealSection>
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)">
-            Contact
+          <p className="text-xl font-black uppercase tracking-[0.18em] text-(--color-accent)">
+            CONTACT US TODAY FOR A FREE QUOTE
           </p>
           <h2 className="mt-4 text-5xl font-black uppercase leading-[0.92] tracking-tighter text-(--color-ink) sm:text-7xl">
             Need a roofer in Sunbury or nearby?
@@ -28,7 +22,7 @@ export default function ContactUs() {
             to larger restoration or replacement work.
           </p>
 
-          <div className="mt-9 grid gap-4 sm:grid-cols-3">
+          <div className="mt-9 grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl border border-(--color-line) bg-white/82 p-5">
               <Phone className="text-(--color-accent)" />
               <p className="mt-4 text-xs font-black uppercase tracking-[0.16em] text-(--color-muted)">
@@ -37,18 +31,20 @@ export default function ContactUs() {
               <p className="mt-2 font-black text-(--color-ink)">{siteConfig.phone}</p>
             </div>
             <div className="rounded-3xl border border-(--color-line) bg-white/82 p-5">
-              <Mail className="text-(--color-accent)" />
-              <p className="mt-4 text-xs font-black uppercase tracking-[0.16em] text-(--color-muted)">
-                Email
-              </p>
-              <p className="mt-2 font-black text-(--color-ink)">{siteConfig.email}</p>
-            </div>
-            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-5">
               <MapPin className="text-(--color-accent)" />
               <p className="mt-4 text-xs font-black uppercase tracking-[0.16em] text-(--color-muted)">
                 Location
               </p>
               <p className="mt-2 font-black text-(--color-ink)">{siteConfig.location}</p>
+            </div>
+            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-5 sm:col-span-2">
+              <Mail className="text-(--color-accent)" />
+              <p className="mt-4 text-xs font-black uppercase tracking-[0.16em] text-(--color-muted)">
+                Email
+              </p>
+              <p className="mt-2 break-all font-black text-(--color-ink)">
+                {siteConfig.email}
+              </p>
             </div>
           </div>
         </RevealSection>
@@ -56,15 +52,26 @@ export default function ContactUs() {
         <RevealSection delay={0.1}>
           <form
             className="rounded-4xl border border-(--color-line) bg-white/88 p-6 shadow-2xl shadow-blue-950/10 backdrop-blur"
-            onSubmit={handleSubmit}
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
           >
             <div className="grid gap-4">
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don’t fill this out if you’re human:
+                  <input name="bot-field" />
+                </label>
+              </p>
               <label className="grid gap-2 text-sm font-black uppercase tracking-[0.12em] text-(--color-ink)">
                 Name
                 <input
                   className="rounded-2xl border border-(--color-line) bg-white px-4 py-3 font-medium normal-case tracking-normal outline-none transition focus:border-(--color-accent)"
                   name="name"
                   placeholder="Your name"
+                  required
                 />
               </label>
               <label className="grid gap-2 text-sm font-black uppercase tracking-[0.12em] text-(--color-ink)">
@@ -73,6 +80,7 @@ export default function ContactUs() {
                   className="rounded-2xl border border-(--color-line) bg-white px-4 py-3 font-medium normal-case tracking-normal outline-none transition focus:border-(--color-accent)"
                   name="contact"
                   placeholder="How should we reach you?"
+                  required
                 />
               </label>
               <label className="grid gap-2 text-sm font-black uppercase tracking-[0.12em] text-(--color-ink)">
@@ -81,6 +89,7 @@ export default function ContactUs() {
                   className="min-h-36 rounded-2xl border border-(--color-line) bg-white px-4 py-3 font-medium normal-case tracking-normal outline-none transition focus:border-(--color-accent)"
                   name="message"
                   placeholder="Tell us about the roof, leak, gutter issue or restoration."
+                  required
                 />
               </label>
               <button

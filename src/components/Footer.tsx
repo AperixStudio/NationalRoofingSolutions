@@ -30,10 +30,10 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
           aria-label="Built by Aperix"
-          className="flex w-fit flex-col items-center gap-1 self-end text-white/55 transition hover:text-white"
+          className="flex w-24 flex-col items-center justify-center gap-1 self-center text-center text-white/55 transition hover:text-white sm:self-end"
         >
           <motion.span
-            className="block"
+            className="grid h-7 w-7 place-items-center"
             animate={prefersReduced ? undefined : { rotate: 360 }}
             transition={
               prefersReduced
@@ -45,10 +45,10 @@ export default function Footer() {
               src={aperixLogo}
               alt=""
               aria-hidden="true"
-              className="h-7 w-auto"
+              className="h-7 w-7"
             />
           </motion.span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-white">
+          <span className="block w-full text-center text-[10px] font-bold uppercase leading-none tracking-[0.08em] text-white">
             Built by Aperix
           </span>
         </a>

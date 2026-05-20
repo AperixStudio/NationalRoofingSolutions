@@ -59,7 +59,7 @@ a {
 }
 
 .service-ticker__track {
-  animation: service-ticker-scroll 34s linear infinite;
+  animation: service-ticker-scroll 20s linear infinite;
 }
 
 .service-ticker:hover .service-ticker__track {

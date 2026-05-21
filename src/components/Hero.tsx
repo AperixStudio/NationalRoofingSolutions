@@ -2,7 +2,7 @@ import { ArrowRight, MapPin } from 'lucide-react'
 import { serviceTickerItems, siteConfig } from '../lib/site'
 import TypeWriter from './animations/TypeWriter'
 
-const heroVideo = new URL('../assets/NRSHeroVidV3.mp4', import.meta.url).href
+const heroVideo = new URL('../assets/NRSHeroVidV3.optimized.mp4', import.meta.url).href
 
 export default function Hero() {
   return (
@@ -61,7 +61,7 @@ export default function Hero() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-label={siteConfig.name}
             className="aspect-video w-full max-h-[40vh] max-w-[min(100%,50rem)] rounded-2xl border border-white/20 object-cover logo-shadow sm:aspect-rectangle sm:max-h-none sm:rounded-[1.7rem]"
           />

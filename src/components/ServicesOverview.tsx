@@ -1,4 +1,4 @@
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 import { services, serviceTags } from '../lib/site'
 import RevealSection from './animations/RevealSection'
 
@@ -76,6 +76,8 @@ export default function ServicesOverview() {
                   <img
                     src={pressureWashingBefore}
                     alt="Roof before pressure washing"
+                    loading="lazy"
+                    decoding="async"
                     className="h-72 w-full object-cover sm:h-full"
                   />
                   <figcaption className="absolute left-3 top-3 rounded-full bg-black/70 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-white backdrop-blur">
@@ -87,6 +89,8 @@ export default function ServicesOverview() {
                   <img
                     src={pressureWashingAfter}
                     alt="Roof after pressure washing"
+                    loading="lazy"
+                    decoding="async"
                     className="h-72 w-full scale-125 object-cover sm:h-full -translate-x-6"
                   />
                   <figcaption className="absolute left-3 top-3 rounded-full bg-(--color-accent)/90 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-white backdrop-blur">

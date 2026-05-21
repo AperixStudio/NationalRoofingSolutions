@@ -45,7 +45,7 @@ export default function IntroAnimation({ onComplete }: Props) {
         autoPlay
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 h-full w-full object-cover"
       />
 
@@ -72,7 +72,7 @@ export default function IntroAnimation({ onComplete }: Props) {
         src={lightningVideo}
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 h-full w-full object-cover"
         initial={{ opacity: 0 }}
         animate={{ opacity: phase >= 3 ? 1 : 0 }}

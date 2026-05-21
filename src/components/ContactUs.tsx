@@ -2,6 +2,19 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { siteConfig } from '../lib/site'
 import RevealSection from './animations/RevealSection'
 
+function FacebookIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-6 w-6"
+      fill="currentColor"
+    >
+      <path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.9h2.77l-.44 2.91h-2.33V22C18.34 21.24 22 17.08 22 12.06Z" />
+    </svg>
+  )
+}
+
 export default function ContactUs() {
   return (
     <section
@@ -20,22 +33,22 @@ export default function ContactUs() {
             Tell National Roofing Solutions what your roof needs and arrange a clear next step.
           </p>
 
-          <div className="mt-7 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-4">
+          <div className="mt-7 grid gap-3 sm:grid-cols-4">
+            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-4 sm:col-span-2">
               <Phone className="text-(--color-accent)" />
               <p className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-(--color-muted)">
                 Phone
               </p>
               <p className="mt-2 font-black text-(--color-ink)">{siteConfig.phone}</p>
             </div>
-            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-4">
+            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-4 sm:col-span-2">
               <MapPin className="text-(--color-accent)" />
               <p className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-(--color-muted)">
                 Location
               </p>
               <p className="mt-2 font-black text-(--color-ink)">{siteConfig.location}</p>
             </div>
-            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-4 sm:col-span-2">
+            <div className="rounded-3xl border border-(--color-line) bg-white/82 p-4 sm:col-span-3">
               <Mail className="text-(--color-accent)" />
               <p className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-(--color-muted)">
                 Email
@@ -44,6 +57,18 @@ export default function ContactUs() {
                 {siteConfig.email}
               </p>
             </div>
+            <a
+              href={siteConfig.facebookUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-3xl border border-[#1877F2]/20 bg-[#1877F2] p-4 text-white transition hover:brightness-110"
+            >
+              <FacebookIcon />
+              <p className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-white/75">
+                Facebook
+              </p>
+              <p className="mt-2 font-black">Follow On Facebook</p>
+            </a>
           </div>
         </RevealSection>
 

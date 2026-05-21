@@ -10,6 +10,19 @@ const links = [
   { href: '#contact', label: 'Contact' },
 ]
 
+function FacebookIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="currentColor"
+    >
+      <path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.9h2.77l-.44 2.91h-2.33V22C18.34 21.24 22 17.08 22 12.06Z" />
+    </svg>
+  )
+}
+
 export default function PillNav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -39,6 +52,15 @@ export default function PillNav() {
               </a>
             ))}
           </div>
+          <a
+            href={siteConfig.facebookUrl}
+            aria-label={`${siteConfig.name} on Facebook`}
+            target="_blank"
+            rel="noreferrer"
+            className="grid h-11 w-11 place-items-center rounded-full bg-[#1877F2] text-white shadow-lg shadow-blue-950/20 transition hover:brightness-110"
+          >
+            <FacebookIcon />
+          </a>
           <a
             href={siteConfig.phoneHref}
             aria-label={`Call ${siteConfig.phone}`}
@@ -72,8 +94,18 @@ export default function PillNav() {
                 </a>
               ))}
               <a
+                href={siteConfig.facebookUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#1877F2] px-4 py-3 text-white transition hover:brightness-110"
+                onClick={() => setMenuOpen(false)}
+              >
+                <FacebookIcon />
+                Facebook
+              </a>
+              <a
                 href={siteConfig.phoneHref}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-(--color-accent) px-4 py-3 text-white transition hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-(--color-accent) px-4 py-3 text-white transition hover:brightness-110"
                 onClick={() => setMenuOpen(false)}
               >
                 <Phone size={17} />

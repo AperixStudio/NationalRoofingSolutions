@@ -23,13 +23,14 @@ export default function Hero() {
           </div>
 
           <h1 className="text-3xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl lg:text-5xl xl:text-6xl">
-            <span className="block">ROOF CLEANING &</span>
-            <span className="block">RESTORATION BUILT FOR</span>
+            <span className="block">PROVIDING THE BEST</span>
             <span className="block min-h-[0.95em] overflow-hidden text-(--color-accent-light)">
               <span className="inline-block whitespace-nowrap">
                 <TypeWriter phrases={siteConfig.heroHeadline} />
               </span>
             </span>
+            <span className="block">SOLUTIONS AND SERVICES</span>
+            
           </h1>
 
           {/*<p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">

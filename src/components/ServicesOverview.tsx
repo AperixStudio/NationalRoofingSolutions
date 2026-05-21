@@ -12,12 +12,15 @@ export default function ServicesOverview() {
       className="flex min-h-svh snap-start items-center py-28 text-white"
     >
       <div className="section-shell">
-        <RevealSection className="max-w-3xl">
+        <RevealSection>
           <p className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent-light)">
             Services
           </p>
           <h2 className="mt-4 text-5xl font-black uppercase leading-[0.92] tracking-tighter sm:text-7xl">
-            WE CARE ABOUT DELIVERING ONLY THE BEST ROOFING SOLUTIONS. NO SHORTCUTS, NO COMPROMISES.
+            WE CARE ABOUT DELIVERING ONLY THE BEST ROOFING SOLUTIONS.
+          </h2>
+          <h2 className="mt-5 text-5xl font-black uppercase leading-[0.92] tracking-tighter sm:text-5xl">
+            NO SHORTCUTS, NO COMPROMISES.
           </h2>
         </RevealSection>
 

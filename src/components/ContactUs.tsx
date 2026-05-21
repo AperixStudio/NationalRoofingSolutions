@@ -14,12 +14,10 @@ export default function ContactUs() {
             CONTACT US TODAY FOR A FREE QUOTE
           </p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-[0.92] tracking-tighter text-(--color-ink) sm:text-6xl">
-            Need roof restoration in Melbourne or the Macedon Ranges?
+           Do you need a Roofing Solution?
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-7 text-(--color-muted) sm:text-lg">
-            Tell National Roofing Solutions what your roof needs and arrange a
-            clear next step, from pressure washing and re-bedding through to
-            painting, repairs and larger restoration work.
+            Tell National Roofing Solutions what your roof needs and arrange a clear next step.
           </p>
 
           <div className="mt-7 grid gap-3 sm:grid-cols-2">

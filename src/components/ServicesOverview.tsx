@@ -14,7 +14,7 @@ export default function ServicesOverview() {
       <div className="section-shell">
         <RevealSection className="max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent-light)">
-            Roofing Services
+            Services
           </p>
           <h2 className="mt-4 text-5xl font-black uppercase leading-[0.92] tracking-tighter sm:text-7xl">
             PRESSURE WASHING, RE-BEDDING AND PAINTING DONE RIGHT
@@ -84,7 +84,7 @@ export default function ServicesOverview() {
           </div>
         </RevealSection>
 
-        <RevealSection delay={0.12}>
+        {/*<RevealSection delay={0.12}>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {serviceTags.map((tag) => (
               <span
@@ -96,7 +96,7 @@ export default function ServicesOverview() {
               </span>
             ))}
           </div>
-        </RevealSection>
+        </RevealSection>*/}
       </div>
     </section>
   )

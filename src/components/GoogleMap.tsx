@@ -214,9 +214,9 @@ export default function GoogleMap() {
 
         const map = new window.google.maps.Map(mapRef.current, {
           center: sunburyCoordinates,
-          zoom:15,
+          zoom:8,
           disableDefaultUI: true,
-          zoomControl: false,
+          zoomControl: true,
           styles: darkMapStyles,
         })
 

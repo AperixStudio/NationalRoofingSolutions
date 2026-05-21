@@ -14,8 +14,8 @@ export const siteConfig = {
   heroHeadline: [
     'Pressure Washing',
     'Re-Bedding',
-    'Roof Painting',
-    'Roof Restoration',
+    'Painting',
+    'Restoration',
   ],
 }
 

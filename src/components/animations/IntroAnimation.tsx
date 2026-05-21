@@ -67,17 +67,19 @@ export default function IntroAnimation({ onComplete }: Props) {
       </motion.div>
 
       {/* ── Lightning burst (covers everything when active) ──────────── */}
-      <motion.video
-        ref={lightningRef}
-        src={lightningVideo}
-        muted
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: phase >= 3 ? 1 : 0 }}
-        transition={{ duration: 0.25, ease: 'easeIn' }}
-      />
+      {phase >= 2 && (
+        <motion.video
+          ref={lightningRef}
+          src={lightningVideo}
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: phase >= 3 ? 1 : 0 }}
+          transition={{ duration: 0.25, ease: 'easeIn' }}
+        />
+      )}
 
       {/* ── White flash → fades to reveal main page ──────────────────── */}
       <motion.div

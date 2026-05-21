@@ -9,13 +9,9 @@ import { siteConfig } from './lib/site'
 import HomePage from './pages/HomePage'
 
 function shouldShowIntro(): boolean {
-  const navEntry = performance.getEntriesByType(
-    'navigation',
-  )[0] as PerformanceNavigationTiming | undefined
-  const navType = navEntry?.type
   const hasSeenIntro = sessionStorage.getItem('introPlayed')
 
-  return navType === 'reload' || !hasSeenIntro
+  return !hasSeenIntro
 }
 
 function App() {

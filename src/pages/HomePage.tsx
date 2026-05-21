@@ -6,7 +6,7 @@ import ServicesOverview from '../components/ServicesOverview'
 
 export default function HomePage() {
   return (
-    <main className="bg-(--color-background)">
+    <main>
       <PillNav />
       <Hero />
       <AboutSection />

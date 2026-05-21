@@ -2,12 +2,23 @@ import logo from '../assets/logo.png'
 import { siteConfig } from '../lib/site'
 import { motion, useReducedMotion } from 'framer-motion'
 import aperixLogo from '../assets/aperix-logo.svg'
+import { ArrowUp } from 'lucide-react'
 
 export default function Footer() {
   const prefersReduced = useReducedMotion()
 
   return (
-    <footer className="snap-start bg-(--color-surface) px-4 py-10 text-white">
+    <footer className="snap-start bg-transparent px-4 pb-10 pt-6 text-white">
+      <div className="mx-auto mb-4 flex max-w-6xl justify-center">
+        <a
+          href="#top"
+          aria-label="Back to top"
+          className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-black uppercase tracking-[0.14em] text-white/80 backdrop-blur transition hover:bg-white/18 hover:text-white"
+        >
+          <ArrowUp size={13} />
+          Back to Top
+        </a>
+      </div>
         <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-4xl border border-white/12 bg-white/5 p-6 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-center gap-4">
           <img

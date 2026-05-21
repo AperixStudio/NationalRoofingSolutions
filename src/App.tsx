@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import './App.css'
+import heroBg from './assets/HeroBackground.mp4'
 import Footer from './components/Footer'
 import IntroAnimation from './components/animations/IntroAnimation'
 import { applyColorVariables } from './lib/colors'
@@ -55,6 +56,18 @@ function App() {
 
   return (
     <>
+      <div className="fixed inset-0 -z-10">
+        <video
+          src={heroBg}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
       <HomePage />
       <Footer />
       <AnimatePresence>

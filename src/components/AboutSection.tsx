@@ -15,16 +15,16 @@ export default function AboutSection() {
           <div className="h-full rounded-4xl border border-(--color-line) bg-white/78 p-6 shadow-2xl shadow-blue-950/10 backdrop-blur">
             <div className="flex h-full flex-col justify-center rounded-3xl bg-(--color-surface) p-7 text-white">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-(--color-accent-light)">
-                Based in {siteConfig.location}
+                Servicing {siteConfig.location}
               </p>
               <h2 className="mt-5 text-3xl font-black uppercase leading-[0.95] tracking-[-0.04em] sm:text-5xl">
-                LOCAL ROOFING SOLUTIONS FOR SUNBURY AND THE NORTH-WEST.
+                ROOF RESTORATION SERVICES FOR MELBOURNE AND MACEDON RANGES.
               </h2>
               <p className="mt-6 text-lg leading-8 text-white/74">
-                National Roofing Solutions is a Sunbury-based roofing trade
-                business providing roof repairs, restorations, replacements and
-                gutter work across Melbourne’s north-west. We focus on clear
-                advice, reliable workmanship and roofing systems built to handle
+                National Roofing Solutions provides roof pressure washing,
+                re-bedding, painting, restorations and repairs across Metro
+                Melbourne and the Macedon Ranges. We focus on clear advice,
+                reliable workmanship and roofing systems built to handle
                 Victorian weather.
               </p>
             </div>

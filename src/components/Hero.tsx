@@ -3,7 +3,7 @@ import heroBg from '../assets/HeroBackground.mp4'
 import { serviceTickerItems, siteConfig } from '../lib/site'
 import TypeWriter from './animations/TypeWriter'
 
-const heroVideo = new URL('../assets/202605192007 (2).mov', import.meta.url).href
+const heroVideo = new URL('../assets/NRSHeroVidV3.mp4', import.meta.url).href
 
 export default function Hero() {
   return (
@@ -28,12 +28,12 @@ export default function Hero() {
         <div className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white/80 backdrop-blur">
             <MapPin size={16} />
-            Sunbury, Victoria
+            Metro Melbourne & Macedon Ranges
           </div>
 
           <h1 className="text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl lg:text-5xl xl:text-6xl">
-            <span className="block whitespace-nowrap">ROOFING BUILT FOR</span>
-            <span className="block whitespace-nowrap">VICTORIAN CONDITIONS</span>
+            <span className="block whitespace-nowrap">ROOF CLEANING &</span>
+            <span className="block whitespace-nowrap">RESTORATION BUILT FOR</span>
             <span className="block min-h-[0.95em] overflow-hidden text-(--color-accent-light)">
               <span className="inline-block whitespace-nowrap">
                 <TypeWriter phrases={siteConfig.heroHeadline} />

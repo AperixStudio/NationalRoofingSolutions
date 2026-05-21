@@ -36,7 +36,7 @@ function App() {
       description: siteConfig.descriptor,
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Sunbury',
+        addressLocality: 'Melbourne',
         addressRegion: 'VIC',
         addressCountry: 'AU',
       },

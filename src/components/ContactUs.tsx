@@ -2,8 +2,6 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { siteConfig } from '../lib/site'
 import RevealSection from './animations/RevealSection'
 
-const contactImage = new URL('../assets/NRSImage3.webp', import.meta.url).href
-
 export default function ContactUs() {
   return (
     <section
@@ -16,12 +14,12 @@ export default function ContactUs() {
             CONTACT US TODAY FOR A FREE QUOTE
           </p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-[0.92] tracking-tighter text-(--color-ink) sm:text-6xl">
-            Need a roofer in Sunbury or nearby?
+            Need roof restoration in Melbourne or the Macedon Ranges?
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-7 text-(--color-muted) sm:text-lg">
-            Tell National Roofing Solutions what is happening with your roof and
-            arrange a clear next step, from leak checks and maintenance through
-            to larger restoration or replacement work.
+            Tell National Roofing Solutions what your roof needs and arrange a
+            clear next step, from pressure washing and re-bedding through to
+            painting, repairs and larger restoration work.
           </p>
 
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -51,7 +49,7 @@ export default function ContactUs() {
           </div>
         </RevealSection>
 
-        <RevealSection className="space-y-3" delay={0.1}>
+        <RevealSection delay={0.1}>
           <form
             className="rounded-4xl border border-(--color-line) bg-white/88 p-5 shadow-2xl shadow-blue-950/10 backdrop-blur"
             name="contact"
@@ -103,13 +101,6 @@ export default function ContactUs() {
               </button>
             </div>
           </form>
-          <div className="overflow-hidden rounded-4xl border border-(--color-line) bg-white/88 p-3 shadow-2xl shadow-blue-950/10">
-            <img
-              src={contactImage}
-              alt="National Roofing Solutions completed roof"
-              className="h-48 w-full rounded-[1.45rem] object-cover"
-            />
-          </div>
         </RevealSection>
       </div>
     </section>

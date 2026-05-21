@@ -127,14 +127,14 @@ function loadGoogleMaps(apiKey: string): Promise<void> {
   return googleMapsScriptPromise
 }
 
-function addSunburyPinOverlay(map: GoogleMapInstance): GoogleMapOverlayView | null {
+function addServiceAreaPinOverlay(map: GoogleMapInstance): GoogleMapOverlayView | null {
   if (!window.google?.maps) {
     return null
   }
 
   const overlay = new window.google.maps.OverlayView()
   const marker = document.createElement('div')
-  marker.setAttribute('aria-label', 'Sunbury, Victoria')
+  marker.setAttribute('aria-label', 'Metro Melbourne and Macedon Ranges service area')
   marker.innerHTML = `
     <div style="
       position: relative;
@@ -204,7 +204,7 @@ export default function GoogleMap() {
     }
 
     let cancelled = false
-    let sunburyPinOverlay: GoogleMapOverlayView | null = null
+    let serviceAreaPinOverlay: GoogleMapOverlayView | null = null
 
     loadGoogleMaps(apiKey)
       .then(() => {
@@ -214,19 +214,19 @@ export default function GoogleMap() {
 
         const map = new window.google.maps.Map(mapRef.current, {
           center: sunburyCoordinates,
-          zoom: 10,
+          zoom:15,
           disableDefaultUI: true,
-          zoomControl: true,
+          zoomControl: false,
           styles: darkMapStyles,
         })
 
-        sunburyPinOverlay = addSunburyPinOverlay(map)
+        serviceAreaPinOverlay = addServiceAreaPinOverlay(map)
       })
       .catch(() => setHasError(true))
 
     return () => {
       cancelled = true
-      sunburyPinOverlay?.setMap(null)
+      serviceAreaPinOverlay?.setMap(null)
     }
   }, [apiKey])
 
@@ -238,7 +238,7 @@ export default function GoogleMap() {
         </p>
         <p className="mt-3 text-sm font-semibold leading-6 text-white/72">
           Add a valid <span className="font-black text-white">VITE_GOOGLE_MAPS_API_KEY</span>{' '}
-          with Maps JavaScript API enabled to show the dark Sunbury map.
+          with Maps JavaScript API enabled to show the dark service area map.
         </p>
       </div>
     )
@@ -249,7 +249,7 @@ export default function GoogleMap() {
       <div ref={mapRef} className="h-full min-h-56 w-full" />
       <div className="pointer-events-none absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-(--color-surface)/90 px-3 py-2 text-xs font-black uppercase tracking-[0.12em] text-white shadow-xl">
         <MapPin size={14} className="text-(--color-accent-light)" />
-        Sunbury, VIC
+        Metro Melbourne & Macedon Ranges
       </div>
     </div>
   )

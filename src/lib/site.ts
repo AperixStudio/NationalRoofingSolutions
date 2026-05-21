@@ -1,59 +1,61 @@
 export const siteConfig = {
   name: 'National Roofing Solutions',
   descriptor:
-    'Roof repairs, restorations, replacements and maintenance across Sunbury and surrounding Victorian suburbs.',
+    'Roof pressure washing, re-bedding, painting, restorations and repairs across Metro Melbourne and the Macedon Ranges.',
   phone: '0439962042',
   phoneHref: 'tel:+61439962042',
   email: 'info@nationalroofing.com.au',
-  location: 'Sunbury, Victoria',
+  location: 'Metro Melbourne & Macedon Ranges',
   mapQuery: '-37.5796,144.7286',
   serviceArea:
-    'Servicing Sunbury, the Macedon Ranges, Melbourne’s north-west and surrounding Victorian communities.',
+    'Servicing Metro Melbourne, the Macedon Ranges and surrounding Victorian communities.',
   facebookUrl: 'https://www.facebook.com/profile.php?id=61577412972943',
   tagline: 'Roofing at its peak.',
   heroHeadline: [
-    'Repairs',
-    'Restoration',
-    'Metal Roofing',
-    'Gutter Solutions',
+    'Pressure Washing',
+    'Re-Bedding',
+    'Roof Painting',
+    'Roof Restoration',
   ],
 }
 
 export const serviceTickerItems = [
-  'Repairs & Restorations',
-  'Roof Replacements',
-  'Metal Roofing',
-  'Gutter Repairs',
-  'Leak Detection',
-  'Storm Damage',
-  'Roof Maintenance',
+  'Pressure washing',
+  'Re-bedding',
+  'Roof painting',
+  'Roof restorations',
+  'Roof repairs',
+  'Gutter repairs',
+  'Leak detection',
+  'Roof maintenance',
 ]
 
 export const services = [
   {
-    title: 'Roof Repairs',
-    text: 'Practical repairs for leaks, cracked bedding, storm damage, flashing issues and general wear before small problems become costly.',
+    title: 'Pressure Washing',
+    text: 'High-pressure roof cleaning to remove dirt, moss, lichen and build-up before restoration, painting or maintenance work.',
   },
   {
-    title: 'Roof Restorations',
-    text: 'Complete restoration work to refresh tired roofs, improve weather protection and lift the look of your property.',
+    title: 'Re-Bedding & Re-Pointing',
+    text: 'Ridge cap re-bedding and flexible pointing to strengthen tiled roofs, improve weather resistance and tidy up worn roof lines.',
   },
   {
-    title: 'Metal Roofing',
-    text: 'Trade-quality metal roofing, replacement sheets, flashings and detail work completed with a clean, durable finish.',
+    title: 'Roof Painting',
+    text: 'Roof coating and painting services that refresh the look of your property while adding a durable protective finish.',
   },
   {
-    title: 'Gutters & Drainage',
-    text: 'Gutter repairs, replacements and roof drainage improvements that keep water moving where it should.',
+    title: 'Roof Repairs & Restorations',
+    text: 'Practical repairs and complete restorations for leaks, storm damage, cracked bedding and general roof wear.',
   },
 ]
 
 export const serviceTags = [
+  'Pressure washing',
+  'Re-bedding',
+  'Roof painting',
+  'Roof restorations',
   'Residential roofing',
   'Commercial roofing',
   'Trade quality workmanship',
-  'Sunbury based',
-  'BlueScope-style metal finishes',
   'Maintenance plans',
-  'Storm response',
 ]

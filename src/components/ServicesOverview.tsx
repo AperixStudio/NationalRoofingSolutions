@@ -9,7 +9,7 @@ export default function ServicesOverview() {
   return (
     <section
       id="services"
-      className="flex min-h-svh snap-start items-center bg-black/45 py-28 text-white"
+      className="flex min-h-svh snap-start items-center py-28 text-white"
     >
       <div className="section-shell">
         <RevealSection className="max-w-3xl">

@@ -8,7 +8,7 @@ export const siteConfig = {
   location: 'Metro Melbourne & Macedon Ranges',
   mapQuery: '-37.5796,144.7286',
   serviceArea:
-    'Servicing Metro Melbourne, the Macedon Ranges and surrounding Victorian communities.',
+    'Servicing Metro Melbourne, the Macedon Ranges and greater Victorian communities.',
   facebookUrl: 'https://www.facebook.com/profile.php?id=61577412972943',
   tagline: 'Roofing at its peak.',
   heroHeadline: [
@@ -50,10 +50,12 @@ export const services = [
 ]
 
 export const serviceTags = [
-  'Pressure washing',
-  'Re-bedding',
-  'Roof painting',
-  'Roof restorations',
+  'Free Roof Inspections',
+  'Fast Response Time',
+  'Insurance Ready Reports',
+  'Gutters & Downpipes',
+  'Tile Replacements',
+  'Gutter Guards and Cleaning',
   'Residential roofing',
   'Commercial roofing',
   'Trade quality workmanship',

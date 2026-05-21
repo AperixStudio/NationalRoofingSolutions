@@ -14,11 +14,11 @@ export default function AboutSection() {
         <RevealSection className="h-full">
           <div className="h-full rounded-4xl border border-(--color-line) bg-white/78 p-6 shadow-2xl shadow-blue-950/10 backdrop-blur">
             <div className="flex h-full flex-col justify-center rounded-3xl bg-(--color-surface) p-7 text-white">
-              {/*<p className="text-sm font-black uppercase tracking-[0.2em] text-(--color-accent-light)">
-                Servicing {siteConfig.location} 
-              </p>*/}
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-(--color-accent-light)">
+                About Us
+              </p>
               <h1 className="mt-5 text-3xl font-black uppercase leading-[0.95] tracking-[-0.04em] sm:text-5xl">
-                ROOF RESTORATION SERVICES FOR MELBOURNE AND THE MACEDON RANGES.
+                ROOFING SOLUTIONS FOR MELBOURNE AND THE MACEDON RANGES.
               </h1>
               <p className="mt-6 text-lg leading-8 text-white/74">
                 National Roofing Solutions provides roof pressure washing,

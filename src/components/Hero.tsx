@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="absolute -bottom-40 left-0 h-112 w-md rounded-full bg-(--color-secondary)/35 blur-3xl" />
 
       <div className="section-shell relative grid flex-1 items-start gap-8 py-8 sm:items-center sm:gap-10 sm:py-14 lg:grid-cols-2">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl pl-4 sm:pl-8">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white/80 backdrop-blur">
             <MapPin size={16} />
             Metro Melbourne & Macedon Ranges
@@ -41,11 +41,11 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
+          {/*<p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
             {siteConfig.descriptor}
-          </p>
+          </p>*/}
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-40 flex flex-col gap-3 sm:flex-row">
             <a
               href="#contact"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-(--color-accent) px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-white transition hover:brightness-110"

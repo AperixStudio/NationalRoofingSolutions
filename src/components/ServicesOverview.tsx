@@ -17,7 +17,7 @@ export default function ServicesOverview() {
             Services
           </p>
           <h2 className="mt-4 text-5xl font-black uppercase leading-[0.92] tracking-tighter sm:text-7xl">
-            PRESSURE WASHING, RE-BEDDING AND PAINTING DONE RIGHT
+            WE CARE ABOUT DELIVERING ONLY THE BEST ROOFING SOLUTIONS. NO SHORTCUTS, NO COMPROMISES.
           </h2>
         </RevealSection>
 
@@ -29,7 +29,6 @@ export default function ServicesOverview() {
                   <span className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-accent) text-lg font-black">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <ArrowUpRight className="text-white/35 transition group-hover:text-(--color-accent-light)" />
                 </div>
                 <h3 className="mt-8 text-3xl font-black uppercase tracking-[-0.03em]">
                   {service.title}
@@ -39,7 +38,19 @@ export default function ServicesOverview() {
             </RevealSection>
           ))}
         </div>
-
+        <RevealSection delay={0.12}>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            {serviceTags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-white/76"
+              >
+                <CheckCircle2 size={16} className="text-(--color-accent-light)" />
+                {tag}
+              </span>
+            ))}
+          </div>
+        </RevealSection>
         <RevealSection delay={0.1}>
           <div className="mt-6 overflow-hidden rounded-4xl border border-white/12 bg-white/6 p-3">
             <div className="grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
@@ -83,20 +94,6 @@ export default function ServicesOverview() {
             </div>
           </div>
         </RevealSection>
-
-        {/*<RevealSection delay={0.12}>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {serviceTags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-white/76"
-              >
-                <CheckCircle2 size={16} className="text-(--color-accent-light)" />
-                {tag}
-              </span>
-            ))}
-          </div>
-        </RevealSection>*/}
       </div>
     </section>
   )

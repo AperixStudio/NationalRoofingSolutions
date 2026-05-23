@@ -9,13 +9,9 @@ import { siteConfig } from './lib/site'
 import HomePage from './pages/HomePage'
 
 function shouldShowIntro(): boolean {
-  const navEntry = performance.getEntriesByType(
-    'navigation',
-  )[0] as PerformanceNavigationTiming | undefined
-  const navType = navEntry?.type
   const hasSeenIntro = sessionStorage.getItem('introPlayed')
 
-  return navType === 'reload' || !hasSeenIntro
+  return !hasSeenIntro
 }
 
 function App() {
@@ -63,7 +59,7 @@ function App() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />

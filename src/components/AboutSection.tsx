@@ -1,5 +1,4 @@
 import GoogleMap from './GoogleMap'
-import { siteConfig } from '../lib/site'
 import RevealSection from './animations/RevealSection'
 
 const aboutImage = new URL('../assets/NRSImage2.webp', import.meta.url).href
@@ -40,6 +39,8 @@ export default function AboutSection() {
               <img
                 src={aboutImage}
                 alt="National Roofing Solutions roofing work"
+                loading="lazy"
+                decoding="async"
                 className="h-72 w-full rounded-[1.45rem] object-cover"
               />
             </div>

@@ -129,7 +129,7 @@ export default function ServicesOverview() {
                     {servicePhotoSets[index % servicePhotoSets.length].map((photo, photoIndex) => (
                       <figure
                         key={`${service.title}-${photo}`}
-                        className={`absolute left-1/2 top-2 h-[42vw] w-[58vw] -translate-x-1/2 translate-y-10 scale-75 overflow-hidden rounded-2xl border border-white/20 bg-black opacity-0 shadow-2xl shadow-black/40 transition duration-1000 ease-out sm:h-[clamp(6.75rem,13vw,10rem)] sm:w-[clamp(9rem,18vw,14rem)] sm:rounded-3xl group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 ${isActiveService ? 'opacity-100' : ''} ${servicePhotoClasses[photoIndex]}`}
+                        className={`absolute left-1/2 top-2 h-[42vw] w-[58vw] -translate-x-1/2 translate-y-10 scale-75 overflow-hidden rounded-2xl border border-white/20 bg-black opacity-0 shadow-2xl shadow-black/40 transition duration-1000 ease-out sm:h-[clamp(6.75rem,13vw,10rem)] sm:w-[clamp(9rem,18vw,14rem)] sm:rounded-3xl group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 ${photoIndex === 0 ? 'hidden sm:block' : ''} ${isActiveService ? 'opacity-100' : ''} ${servicePhotoClasses[photoIndex]}`}
                         style={{
                           transitionDelay: `${photoIndex * 55}ms`,
                           opacity: isActiveService ? 1 : undefined,

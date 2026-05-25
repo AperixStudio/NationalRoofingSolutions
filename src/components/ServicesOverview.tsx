@@ -33,6 +33,7 @@ const isMobileServicesViewport = () => window.matchMedia('(max-width: 639px)').m
 export default function ServicesOverview() {
   const [activeServiceIndex, setActiveServiceIndex] = useState<number | null>(null)
   const openedCardTop = useRef(0)
+  const pointerStart = useRef({ x: 0, y: 0 })
   const serviceCardRefs = useRef<(HTMLElement | null)[]>([])
 
   useEffect(() => {
@@ -117,7 +118,17 @@ export default function ServicesOverview() {
                   className={`group relative isolate h-full cursor-pointer overflow-visible rounded-4xl border border-white/12 bg-white/6 p-6 transition hover:z-20 hover:-translate-y-1 hover:bg-white/9 focus:outline-none focus-visible:z-20 focus-visible:-translate-y-1 focus-visible:bg-white/9 focus-visible:ring-2 focus-visible:ring-(--color-accent-light) ${isActiveService ? 'z-20 bg-white/9' : ''}`}
                   tabIndex={0}
                   aria-expanded={isActiveService}
-                  onClick={() => openServicePhotos(index)}
+                  onPointerDown={(event) => {
+                    pointerStart.current = { x: event.clientX, y: event.clientY }
+                  }}
+                  onPointerUp={(event) => {
+                    const movedX = Math.abs(event.clientX - pointerStart.current.x)
+                    const movedY = Math.abs(event.clientY - pointerStart.current.y)
+
+                    if (movedX < 8 && movedY < 8) {
+                      openServicePhotos(index)
+                    }
+                  }}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter' || event.key === ' ') {
                       event.preventDefault()
@@ -125,7 +136,9 @@ export default function ServicesOverview() {
                     }
                   }}
                 >
-                  <div className="pointer-events-none absolute inset-x-0 top-0 z-30 block">
+                  <div
+                    className={`absolute inset-x-0 top-0 z-30 block ${isActiveService ? 'pointer-events-auto' : 'pointer-events-none'}`}
+                  >
                     {servicePhotoSets[index % servicePhotoSets.length].map((photo, photoIndex) => (
                       <figure
                         key={`${service.title}-${photo}`}

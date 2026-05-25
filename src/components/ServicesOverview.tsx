@@ -23,9 +23,9 @@ const servicePhotoClasses = [
 ]
 
 const mobileServicePhotoTransforms = [
-  'translateX(calc(-50% + 7vw)) translateY(-32vw) rotate(-5deg) scale(1)',
-  'translateX(calc(-50% + 30vw)) translateY(-66vw) rotate(1deg) scale(1)',
-  'translateX(calc(-50% + 53vw)) translateY(-32vw) rotate(5deg) scale(1)',
+  'translateX(calc(-50% - 15vw)) translateY(-32vw) rotate(-5deg) scale(1)',
+  'translateX(calc(-50% + 5vw)) translateY(-66vw) rotate(1deg) scale(1)',
+  'translateX(calc(-50% + 18vw)) translateY(-32vw) rotate(5deg) scale(1)',
 ]
 
 const isMobileServicesViewport = () => window.matchMedia('(max-width: 639px)').matches
@@ -80,7 +80,7 @@ export default function ServicesOverview() {
   return (
     <section
       id="services"
-      className="flex min-h-svh snap-start items-center py-28 text-white"
+      className="flex min-h-svh snap-start items-center overflow-x-clip py-28 text-white"
     >
       <div className="section-shell">
         <RevealSection>

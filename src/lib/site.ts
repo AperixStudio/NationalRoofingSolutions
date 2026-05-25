@@ -47,6 +47,10 @@ export const services = [
     title: 'Roof Repairs & Restorations',
     text: 'Practical repairs and complete restorations for leaks, storm damage, cracked bedding and general roof wear.',
   },
+  {
+    title: 'Plus More',
+    text: 'Valley replacement, storm sealing, gutter and downpipe repairs, leak detection and roof maintenance, tin roof repairs and more.',
+  },
 ]
 
 export const serviceTags = [
@@ -56,6 +60,8 @@ export const serviceTags = [
   'Gutters & Downpipes',
   'Tile Replacements',
   'Gutter Guards and Cleaning',
+  'Valley Replacement',
+  'Tin Roof Repairs & Replacements',
   'Residential roofing',
   'Commercial roofing',
   'Trade quality workmanship',

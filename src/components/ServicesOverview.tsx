@@ -25,21 +25,33 @@ export default function ServicesOverview() {
         </RevealSection>
 
         <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {services.map((service, index) => (
-            <RevealSection key={service.title} delay={index * 0.08}>
-              <article className="group h-full rounded-4xl border border-white/12 bg-white/6 p-6 transition hover:-translate-y-1 hover:bg-white/9">
-                <div className="flex items-start justify-between gap-4">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-accent) text-lg font-black">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <h3 className="mt-8 text-3xl font-black uppercase tracking-[-0.03em]">
-                  {service.title}
-                </h3>
-                <p className="mt-4 leading-7 text-white/68">{service.text}</p>
-              </article>
-            </RevealSection>
-          ))}
+          {services.map((service, index) => {
+            const isCenteredFinalCard = services.length % 2 === 1 && index === services.length - 1
+
+            return (
+              <RevealSection
+                key={service.title}
+                delay={index * 0.08}
+                className={
+                  isCenteredFinalCard
+                    ? 'md:col-span-2 md:mx-auto md:w-[calc(50%-0.5rem)]'
+                    : undefined
+                }
+              >
+                <article className="group h-full rounded-4xl border border-white/12 bg-white/6 p-6 transition hover:-translate-y-1 hover:bg-white/9">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-accent) text-lg font-black">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <h3 className="mt-8 text-3xl font-black uppercase tracking-[-0.03em]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-4 leading-7 text-white/68">{service.text}</p>
+                </article>
+              </RevealSection>
+            )
+          })}
         </div>
         <RevealSection delay={0.12}>
           <div className="mt-10 flex flex-wrap justify-center gap-3">

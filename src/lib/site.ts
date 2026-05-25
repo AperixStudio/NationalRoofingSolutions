@@ -14,20 +14,38 @@ export const siteConfig = {
   heroHeadline: [
     'Pressure Washing',
     'Re-Bedding',
+    'Re-Pointing',
     'Painting',
     'Restoration',
+    'Valley Replacement',
+    'Storm Seal',
+    'Gutters & Downpipes',
   ],
 }
 
 export const serviceTickerItems = [
   'Pressure washing',
   'Re-bedding',
+  'Re-pointing',
   'Roof painting',
   'Roof restorations',
   'Roof repairs',
-  'Gutter repairs',
-  'Leak detection',
   'Roof maintenance',
+  'Tin roof repairs',
+  'Tin roof replacements',
+  'Gutter repairs',
+  'Downpipe repairs',
+  'Valley replacement',
+  'Tin roof repairs',
+  'Storm sealing',
+  'Leak detection',
+  'Gutter guards and cleaning',
+  'Tile replacements',
+  'Residential roofing',
+  'Commercial roofing',
+  
+  
+
 ]
 
 export const services = [

@@ -75,9 +75,9 @@ export default function Hero() {
                 aria-hidden={copy === 1}
                 className="flex shrink-0 gap-3 pr-3"
               >
-                {serviceTickerItems.map((item) => (
+                {serviceTickerItems.map((item, itemIndex) => (
                   <span
-                    key={`${copy}-${item}`}
+                    key={`${copy}-${itemIndex}-${item}`}
                     className="rounded-full border border-white/14 bg-white/8 px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-white/76"
                   >
                     {item}

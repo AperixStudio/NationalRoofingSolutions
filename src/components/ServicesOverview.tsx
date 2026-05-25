@@ -17,9 +17,9 @@ const servicePhotoSets = [
 ]
 
 const servicePhotoClasses = [
-  'group-hover:translate-x-[calc(-50%-30vw)] group-hover:-translate-y-[38vw] group-hover:-rotate-5 group-focus-visible:translate-x-[calc(-50%-30vw)] group-focus-visible:-translate-y-[38vw] group-focus-visible:-rotate-5 sm:group-hover:translate-x-[calc(-50%-10rem)] sm:group-hover:-translate-y-36 sm:group-hover:-rotate-6 sm:group-focus-visible:translate-x-[calc(-50%-10rem)] sm:group-focus-visible:-translate-y-36 sm:group-focus-visible:-rotate-6 lg:group-hover:translate-x-[calc(-50%-13rem)] lg:group-focus-visible:translate-x-[calc(-50%-13rem)] xl:group-hover:translate-x-[calc(-50%-15rem)] xl:group-focus-visible:translate-x-[calc(-50%-15rem)]',
-  'group-hover:-translate-x-1/2 group-hover:-translate-y-[48vw] group-hover:rotate-1 group-focus-visible:-translate-x-1/2 group-focus-visible:-translate-y-[48vw] group-focus-visible:rotate-1 sm:group-hover:-translate-y-44 sm:group-focus-visible:-translate-y-44 lg:group-hover:-translate-y-48 lg:group-focus-visible:-translate-y-48',
-  'group-hover:translate-x-[calc(-50%+30vw)] group-hover:-translate-y-[38vw] group-hover:rotate-5 group-focus-visible:translate-x-[calc(-50%+30vw)] group-focus-visible:-translate-y-[38vw] group-focus-visible:rotate-5 sm:group-hover:translate-x-[calc(-50%+10rem)] sm:group-hover:-translate-y-36 sm:group-hover:rotate-6 sm:group-focus-visible:translate-x-[calc(-50%+10rem)] sm:group-focus-visible:-translate-y-36 sm:group-focus-visible:rotate-6 lg:group-hover:translate-x-[calc(-50%+13rem)] lg:group-focus-visible:translate-x-[calc(-50%+13rem)] xl:group-hover:translate-x-[calc(-50%+15rem)] xl:group-focus-visible:translate-x-[calc(-50%+15rem)]',
+  'sm:group-hover:translate-x-[calc(-50%-10rem)] sm:group-hover:-translate-y-36 sm:group-hover:-rotate-6 sm:group-focus-visible:translate-x-[calc(-50%-10rem)] sm:group-focus-visible:-translate-y-36 sm:group-focus-visible:-rotate-6 lg:group-hover:translate-x-[calc(-50%-13rem)] lg:group-focus-visible:translate-x-[calc(-50%-13rem)] xl:group-hover:translate-x-[calc(-50%-15rem)] xl:group-focus-visible:translate-x-[calc(-50%-15rem)]',
+  'sm:group-hover:-translate-y-44 sm:group-focus-visible:-translate-y-44 lg:group-hover:-translate-y-48 lg:group-focus-visible:-translate-y-48',
+  'sm:group-hover:translate-x-[calc(-50%+10rem)] sm:group-hover:-translate-y-36 sm:group-hover:rotate-6 sm:group-focus-visible:translate-x-[calc(-50%+10rem)] sm:group-focus-visible:-translate-y-36 sm:group-focus-visible:rotate-6 lg:group-hover:translate-x-[calc(-50%+13rem)] lg:group-focus-visible:translate-x-[calc(-50%+13rem)] xl:group-hover:translate-x-[calc(-50%+15rem)] xl:group-focus-visible:translate-x-[calc(-50%+15rem)]',
 ]
 
 const mobileServicePhotoTransforms = [
@@ -33,7 +33,6 @@ const isMobileServicesViewport = () => window.matchMedia('(max-width: 639px)').m
 export default function ServicesOverview() {
   const [activeServiceIndex, setActiveServiceIndex] = useState<number | null>(null)
   const openedCardTop = useRef(0)
-  const pointerStart = useRef({ x: 0, y: 0 })
   const serviceCardRefs = useRef<(HTMLElement | null)[]>([])
 
   useEffect(() => {
@@ -116,33 +115,12 @@ export default function ServicesOverview() {
                     serviceCardRefs.current[index] = element
                   }}
                   className={`group relative isolate h-full cursor-pointer overflow-visible rounded-4xl border border-white/12 bg-white/6 p-6 transition hover:z-20 hover:-translate-y-1 hover:bg-white/9 focus:outline-none focus-visible:z-20 focus-visible:-translate-y-1 focus-visible:bg-white/9 focus-visible:ring-2 focus-visible:ring-(--color-accent-light) ${isActiveService ? 'z-20 bg-white/9' : ''}`}
-                  tabIndex={0}
-                  aria-expanded={isActiveService}
-                  onPointerDown={(event) => {
-                    pointerStart.current = { x: event.clientX, y: event.clientY }
-                  }}
-                  onPointerUp={(event) => {
-                    const movedX = Math.abs(event.clientX - pointerStart.current.x)
-                    const movedY = Math.abs(event.clientY - pointerStart.current.y)
-
-                    if (movedX < 8 && movedY < 8) {
-                      openServicePhotos(index)
-                    }
-                  }}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                      event.preventDefault()
-                      openServicePhotos(index)
-                    }
-                  }}
                 >
-                  <div
-                    className={`absolute inset-x-0 top-0 z-30 block ${isActiveService ? 'pointer-events-auto' : 'pointer-events-none'}`}
-                  >
+                  <div className="pointer-events-none absolute inset-x-0 top-0 z-30 block">
                     {servicePhotoSets[index % servicePhotoSets.length].map((photo, photoIndex) => (
                       <figure
                         key={`${service.title}-${photo}`}
-                        className={`absolute left-1/2 top-2 h-[42vw] w-[58vw] -translate-x-1/2 translate-y-10 scale-75 overflow-hidden rounded-2xl border border-white/20 bg-black opacity-0 shadow-2xl shadow-black/40 transition duration-1000 ease-out sm:h-[clamp(6.75rem,13vw,10rem)] sm:w-[clamp(9rem,18vw,14rem)] sm:rounded-3xl group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 ${photoIndex === 0 ? 'hidden sm:block' : ''} ${isActiveService ? 'opacity-100' : ''} ${servicePhotoClasses[photoIndex]}`}
+                        className={`absolute left-1/2 top-2 h-[42vw] w-[58vw] -translate-x-1/2 translate-y-10 scale-75 overflow-hidden rounded-2xl border border-white/20 bg-black opacity-0 shadow-2xl shadow-black/40 transition duration-1000 ease-out sm:h-[clamp(6.75rem,13vw,10rem)] sm:w-[clamp(9rem,18vw,14rem)] sm:rounded-3xl sm:group-hover:scale-100 sm:group-hover:opacity-100 sm:group-focus-visible:scale-100 sm:group-focus-visible:opacity-100 ${photoIndex === 0 ? 'hidden sm:block' : ''} ${isActiveService ? 'opacity-100' : ''} ${servicePhotoClasses[photoIndex]}`}
                         style={{
                           transitionDelay: `${photoIndex * 55}ms`,
                           opacity: isActiveService ? 1 : undefined,
@@ -164,9 +142,14 @@ export default function ServicesOverview() {
                     <span className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-accent) text-lg font-black">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="pointer-events-none text-[0.62rem] font-black uppercase tracking-[0.18em] text-white/25 sm:hidden">
+                    <button
+                      type="button"
+                      className="relative z-40 text-[0.62rem] font-black uppercase tracking-[0.18em] text-white/25 transition hover:text-white/45 focus:outline-none focus-visible:text-white/60 sm:hidden"
+                      aria-expanded={isActiveService}
+                      onClick={() => openServicePhotos(index)}
+                    >
                       tap me
-                    </span>
+                    </button>
                   </div>
                   <h3 className="relative z-10 mt-8 text-3xl font-black uppercase tracking-[-0.03em]">
                     {service.title}

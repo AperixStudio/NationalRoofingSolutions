@@ -67,7 +67,7 @@ export default function ContactUs() {
               <p className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-white/75">
                 Facebook
               </p>
-              <p className="mt-2 font-black">Follow On Facebookv</p>
+              <p className="mt-2 font-black">Follow On Facebook</p>
             </a>
           </div>
         </RevealSection>
